@@ -1,1 +1,40 @@
-{     "devDependencies": {         "koa-cors": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-koa-cors",     "homepage": "https://github.com/npmtest/node-npmtest-koa-cors",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-koa-cors.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### test coverage for  [koa-cors (v0.0.16)](https://github.com/evert0n/koa-cors)  [![npm package](https://img.shields.io/npm/v/npmtest-koa-cors.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-koa-cors) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-koa-cors.svg)](https://travis-ci.org/npmtest/node-npmtest-koa-cors)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "koa-cors": "*",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-koa-cors",
+    "keywords": [
+        "coverage",
+        "test",
+        "koa-cors"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_koa_cors.js",
+    "name": "npmtest-koa-cors",
+    "nameAlias": "npmtest_koa_cors",
+    "nameOriginal": "npmtest-koa-cors",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-koa-cors.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
